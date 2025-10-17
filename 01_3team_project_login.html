@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        border: 0px solid;
+        margin: 0px auto;
+        margin-top: 100px;
+
+        width: 1280px;
+        /* height: 100px ; */
+    }
+
+    #header {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .inner {
+        border: 1px solid;
+        width: 500px;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+    }
+
+    #nav {
+        /*nav 자식들을 센터에 정렬*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    #in_border_line_top {
+        width: 450px;
+        height: 70px;
+        border: 1px solid;
+        color: #03c75a;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    #in_border_line_bottom {
+        width: 450px;
+        height: 70px;
+        border: 1px solid;
+        color: #03c75a;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .login_Button button {
+        border: 1px solid;
+        border-radius: 5px;
+        width: 100%;
+        height: 100%;
+        color: white;
+        background-color: gray;
+        font-size: 20px;
+        font-weight: bold;
+
+    }
+
+    .login_Button button:hover {
+        color: gray;
+        background-color: white;
+
+    }
+
+    .login_Button {
+        width: 250px;
+        height: 50px;
+        padding: 0;
+    }
+
+    #login_status table {
+        width: 100%;
+        height: 80px;
+        border-collapse: collapse;
+
+    }
+
+    #login_status td {
+        vertical-align: top;
+        padding: 5px;
+    }
+
+
+    #login_status td:last-child {
+        text-align: right;
+        /* 오른쪽에 배치할 셀 */
+
+    }
+
+    #tail {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #tail :hover {
+        color: black;
+        background-color: grey;
+        cursor: pointer;
+    }
+
+    #lang_icon {
+        text-align: right;
+        height: 100px;
+    }
+
+    .tab-bar {
+        display: flex;
+        width: 100%;
+        border-bottom: 2px solid #ccc;
+        margin-bottom: 20px;
+        margin: 0;
+    }
+
+    .tab {
+        flex: 1;
+        text-align: center;
+        padding: 12px 0;
+        cursor: default;
+        /* 클릭해도 아무 일 안 일어나게 */
+        font-weight: bold;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        border-bottom: none;
+        /* 아래 선 지우면 탭 느낌 */
+        border-radius: 5px 5px 0 0;
+    }
+
+    .tab.active {
+        background-color: white;
+        border-bottom: 2px solid white;
+        /* 선택된 탭이 튀어나와 보이게 */
+        color: #03c75a;
+        /* 네이버 스타일 초록색 */
+    }
+
+    .log_toggle {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .toggle-icon {
+        width: 40px;
+        height: 20px;
+        cursor: default;
+    }
+
+ #tail span {
+    margin: 15px;
+ }
+
+ #lang_icon select{
+    width: 100px;
+    height: 30px;
+ }
+ .input.size{
+    width: 90%;
+    height: 90%;
+    border: 0px;
+ }
+ .input.size::placeholder{
+    color: #03c75a;
+    font-size: 20px;
+ }
+</style>
+
+<table>
+    <tr>
+        <div id="lang_icon">
+            <select>
+                <option value="ko_KR">한국어</option>
+                <option value="en_US">English</option>
+                <option value="zh-Hans_CN">中文(简体)</option>
+                <option value="zh-Hant_TW">中文(台灣)</option>
+            </select>
+        </div>
+    </tr>
+    <tr>
+        <div id="header">
+            <a href="https://www.naver.com">
+                <img src="./image/네이버로고.PNG" height="50">
+            </a>
+
+        </div>
+    </tr>
+</table>
+
+
+<div class="tab-bar"> <!--Tab 만들기-->
+    <div class="tab active">아이디 로그인</div>
+    <div class="tab ">일회용 번호</div>
+    <div class="tab">QR코드 로그인</div>
+</div>
+
+<div id="nav">
+    <div class="inner">
+        <table>
+            <tr>
+                <td id="in_border_line_top">
+                     <input class="input size" type="text" placeholder="아이디 또는 전화번호 "  ;>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td id="in_border_line_bottom">
+                     <input class="input size" type="text" placeholder="비밀번호 " ;>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td id="login_status">
+                    <table>
+                        <tr>
+                            <td>
+                                <label class="log_checkbox">
+                                    <input type="checkbox">
+                                    로그인 상태 유지
+                                </label>
+                            </td>
+                            <td>
+                                <div class="log_toggle">IP보안
+                                    <svg class="toggle-icon" viewBox="0 0 50 25" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="0" y="0" width="50" height="25" rx="12.5" fill="#ccc" />
+                                        <circle cx="12.5" cy="12.5" r="10" fill="white" />
+                                    </svg>
+
+                                </div>
+
+                            </td>
+                        </tr>
+
+
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="login_Button">
+                    <button>로그인</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+<div id="tail">
+    <span> 비밀번호찾기</span> |<span> 아이디찾기</span> | <span>회원가입</span>
+</div>
+
+</body>
+
+</html>
